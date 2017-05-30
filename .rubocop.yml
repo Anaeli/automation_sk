@@ -1,0 +1,82 @@
+# Disable check for get_/set_ accessor methods.
+Style/AccessorMethodName:
+  Enabled: false
+
+# Change metric line lenght from 80 to 120 characters.
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+   - "**/work_order_vendor_steps.rb"
+
+# Disable check snake_case on source file names.
+Style/FileName:
+  Enabled: false
+
+# Disable no return required
+Style/RedundantReturn:
+  Enabled: false
+
+# Is to avoid Carriage syntax error
+EndOfLine:
+  Enabled: false
+
+# Built-in global variables are allowed by default.
+Style/GlobalVars:
+  AllowedVariables: [$org_prefix, $credentials, $configuration]
+
+# Count the body method lines, except comment lines
+Metrics/MethodLength:
+  CountComments: false  
+  Max: 20
+
+# Change perceived complexity
+Metrics/PerceivedComplexity:
+  Max: 15
+
+# A complexity metric that is strongly correlated to the number of test cases needed to validate a method.
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  Max: 15
+
+# Checks for usage of `extend self` in modules.
+Style/ModuleFunction:
+  Enabled: false
+
+# This is to count lines to method length, except comment lines
+Metrics/MethodLength:
+  CountComments: false
+  Max: 35
+
+# This is to count lines to module length, except comment lines
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 300
+  Exclude:
+      - "**/api_helper.rb"
+
+# The ABC size is a calculated magnitude, so this number can be an Integer or a Float.
+Metrics/AbcSize:
+  Max: 100
+
+# Avoid warning related to verb name methods
+Style/PredicateName:
+  Enabled: false
+  
+# Eval security risk exception  
+Security/Eval:
+  Description: 'The use of eval represents a serious security risk.'
+  Enabled: false
+
+# Use self when defining module/class methods.
+Style/ClassMethods:
+  Enabled: false
+
+# This is to count lines to block length, except comment lines
+Metrics/BlockLength:
+  CountComments: false
+  Max: 200
+
+# Avoid parameter lists longer than three or four parameters.
+Metrics/ParameterLists:
+  Enabled: true
+  Max: 10
