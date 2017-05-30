@@ -1,5 +1,4 @@
-# Alternative orgs can be specified on the commandline by adding org_name=some_other_sandbox to the commandline.
-# You can specify a password for each user within the org
+# Credentials to interact with  contact form
 
 credentials:
   Administrator:
@@ -10,7 +9,7 @@ credentials:
     password: test!23sk
 
 Execution:
-  host: www.google.com/intl/es-419/forms/about/
+  host: docs.google.com/forms/u/0/
   browser: chrome
   max_wait_time: 20
   min_wait_time: 3

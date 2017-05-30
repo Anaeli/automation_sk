@@ -45,24 +45,21 @@ AfterConfiguration do
   # Environment configurations
   execution = $configuration['Execution']
   $browser = (ENV['browser'] || execution['browser']).to_sym
-  HOST = ENV['Host'] || execution['Host']
+  HOST = ENV['Host'] || execution['host']
   $wait_time = execution['max_wait_time']
   $min_wait_time = execution['min_wait_time']
 
   # Get Credentials map
-  $credentials = $configuration['credentials']
+  credentials = $configuration['credentials']
+  EMAIL_ADMIN = credentials['Administrator']['email']
+  PASSWORD_ADMIN = credentials['Administrator']['password']
 
-  # Report Title
-  $report_title = $configuration['Report']['title']
 
   # Capybara Basic Configurations
   Capybara.configure do |config|
     config.default_driver = :selenium
     config.default_max_wait_time = $wait_time
     config.wait_on_first_by_default = $wait_time
-  end
-  unless execution.key?('org_name')
-    raise 'Org name #{$org_name} not found in #{$config_path}!'
   end
 end
 

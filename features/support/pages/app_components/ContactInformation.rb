@@ -2,7 +2,7 @@
 module ContactInformation
   extend Capybara::DSL
 
-  @context = "div[@class = 'freebirdFormviewerViewFormContent']"
+  @context = "//div[@class = 'freebirdFormviewerViewFormContent']"
 
   def ContactInformation.set_field(label,value)
     xpath_field ="//div[normalize-space(text())='#{label}']/ancestor::div[@class='freebirdFormviewerViewItemsItemItemHeader']/following-sibling::div"
@@ -17,13 +17,16 @@ module ContactInformation
     end
   end
 
+  # ResponsesView
   def ContactInformation.click_tab(tab_name)
-    within(:xpath, @context) do
-      find(:xpath, "//div[text()='Responses']").click
-    end
+      find(:xpath, "//div[@class = 'freebirdFormeditorViewTabResponsesViewTabContent']/div[text()='#{tab_name}']").click
   end
 
   def ContactInformation.get_text(label)
     find(:xpath, "//span[text()='#{label}']/ancestor::div[@class='SummaryHeaderContainer']//following-sibling::div[@class='freebirdFormeditorViewResponsesSummaryChartContainer']").text
+  end
+
+  def ContactInformation.get_count_responses
+    return find(:xpath, "//div[@class='freebirdFormeditorViewResponsesResponsesCount']").text
   end
 end
