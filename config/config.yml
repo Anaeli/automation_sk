@@ -3,129 +3,14 @@
 
 credentials:
   Administrator:
-    username: gustavo@sitehands.com.sitehands2
-    password: Control123
-    profile: Administrator
-    security_token:
-  Full Access User:
-    username: Automation User Manager
-    password: .Control123
-    mail: gustavo.cavero@jalasoft.com
-    fullname: Automation User Manager
-    profile: Full Access User
-  Standard User:
-    username: standard.cst@jalasoft.com.sitehands2
-    password: .Control123
-    mail: standard.cst@gmail.com
-    fullname: CST Analyst
-    profile: Standard User
-  Portal Tenant User 1:
-    username: portal.tenant.aut@gmail.com
-    password: .Control123
-    mail:  portal.tenant.aut@gmail.com
-    fullname: Client
-    profile: Portal Tenant User 1
-  Portal Tenant User 2:
-     username: portal.tenant.aut@gmail.com
-     password: .Control123
-     mail:  portal.tenant.aut@gmail.com
-     fullname: Client Non Approval1
-     profile: Portal Tenant User 2
-  Portal Tenant User 3:
-     username: client_non_approval2@jalasoft.com.stest2
-     password: Control123
-     mail: lourdes.villca@jalasoft.com
-     fullname: Client Non Approval2
-     profile: Portal Tenant User 3
-  Technician Tenant User 1:
-    username: technician.tenant1@gmail.com
-    password: .Control123
-    mail: technician.tenant1@gmail.com
-    fullname: Technician
-    profile: Technician Tenant User 1
-  Technician Tenant User 2:
-    username: technician.tenant2@gmail.com
-    password: .Control123
-    mail: technician.tenant2@gmail.com
-    fullname: Technician2
-    profile: Technician Tenant User 2
-  Technician Tenant User 3:
-    username: technician.tenant3@gmail.com
-    password: .Control123
-    mail: technician.tenant3@gmail.com
-    fullname: Technician3
-    profile: Technician Tenant User 3
-  Vendor Tenant User 1:
-    username: dispatcher.tenant1@gmail.com
-    password: .Control123
-    mail: dispatcher.tenant1@gmail.com
-    fullname: Dispatcher
-    profile: Vendor Tenant User 1
-  Vendor Tenant User 2:
-    username: dispatcher.tenant2@gmail.com
-    password: .Control123
-    mail: dispatcher.tenant2@gmail.com
-    fullname: Dispatcher2
-    profile: Vendor Tenant User 2
-  Vendor Tenant User 3:
-    username: dispatcher.tenant3@gmail.com
-    password: .Control123
-    mail: dispatcher.tenant3@gmail.com
-    fullname: Dispatcher3
-    profile: Vendor Tenant User 3
-
-credentials_optional:
-  Portal User:
-    username:
-    password:
-    mail:
-  Vendor User:
-    username:
-    password:
-    mail:
-  Read Only User:
-    username:
-    password:
-    mail:
-  Standard Tenant User:
-    username:
-    password:
-    mail:
-
-API:
-  # cmcloud<< Prefix used for Package environment
-  org_prefix: cmcloud
-  api_password: ApiPas123
-  # Variable to manage the delete of elements with object_prefix
-  run_delete_script: false
+    email: automation.sk2017@gmail.com
+    password: test!23sk
+  Contact:
+    email: automationsk007@gmail.com
+    password: test!23sk
 
 Execution:
-  swp_host: sitehands2.sitehands.com
-  sit_host: test.salesforce.com
-  environment: sitehands2
-  org_name: default
+  host: www.google.com/intl/es-419/forms/about/
   browser: chrome
   max_wait_time: 20
   min_wait_time: 3
-  headless: false
-
-Report:
-  rerun_num: 2
-  report_path: reports
-  title: Automation Report [Package]
-
-Logger Options:
-  status: enabled
-  level:
-
-# Prefix for objects to be deleted with the script i.e. [UIT]
-object_prefix: UIT
-
-# Configuration of manage package
-Resource_Package:
-  # URL of manage package
-  url:
-  # Password of install
-  password:
-  # Exchange between install and update true if is install or false if is update
-  install:
