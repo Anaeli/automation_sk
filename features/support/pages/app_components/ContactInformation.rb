@@ -2,7 +2,7 @@
 module ContactInformation
   extend Capybara::DSL
 
-  @context = "//div[@class = 'freebirdFormviewerViewFormContent']"
+  @context = "//div[@class = 'freebirdFormviewerViewFormContent ']"
 
   def ContactInformation.set_field(label,value)
     xpath_field ="//div[normalize-space(text())='#{label}']/ancestor::div[@class='freebirdFormviewerViewItemsItemItemHeader']/following-sibling::div"

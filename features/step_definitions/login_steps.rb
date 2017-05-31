@@ -12,3 +12,7 @@ Given(/^passed$/) do
   expect(true).to be true
 end
 
+Given(/^login with Contact User$/) do
+  login_page.log_in(EMAIL_CONTACT, PASSWORD_CONTACT)
+end
+

@@ -1,5 +1,5 @@
-# This class is to define Service Request object
-class ServiceRequestEntity
+# This class is to define Contact Information object
+class ContactEntity
   attr_reader :name,
               :email,
               :address,
@@ -22,10 +22,12 @@ class ServiceRequestEntity
     form = ContactInfoUI::FORM
     sreq_hash.each do |field_name, value|
       new_attr_name = Utility.convert_to_underscore(field_name)
-      type = eval("ContactInfoUI::'#{new_attr_name.upcase}'['Type']")
-      label = eval("ContactInfoUI::'#{new_attr_name.upcase}']['Label']")
+      a = ContactInfoUI::NAME['Type']
+      type = eval("ContactInfoUI::#{new_attr_name.upcase}['Type']")
+      label = eval("ContactInfoUI::#{new_attr_name.upcase}['Label']")
       ComponentsUtil.fill_field(type, label, value, form)
     end
+    ContactInformation.click_btn('Submit')
 
   end
  end
