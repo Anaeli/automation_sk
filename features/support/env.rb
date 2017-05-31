@@ -54,6 +54,9 @@ AfterConfiguration do
   EMAIL_ADMIN = credentials['Administrator']['email']
   PASSWORD_ADMIN = credentials['Administrator']['password']
 
+  EMAIL_CONTACT = credentials['Contact']['email']
+  PASSWORD_CONTACT = credentials['Contact']['password']
+
 
   # Capybara Basic Configurations
   Capybara.configure do |config|

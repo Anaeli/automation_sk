@@ -10,12 +10,8 @@ module ComponentsUtil
     if value.eql?('')
       cst_logger.info("#{field} is not filled because is empty")
     else
-      formatted_value = value.is_a?(Array) || Utility.is_boolean?(value) ? value : "'#{value}'"
-      string_to_eval = if section.nil?
-                         "#{component}.action('#{field}', #{formatted_value})"
-                       else
-                         "#{component}.action('#{field}', #{formatted_value}, '#{section}')"
-                       end
+      formatted_value = value.is_a?(Array) ? value : "'#{value}'"
+      string_to_eval = "#{component}.action('#{field}', #{formatted_value})"
       action = option_type(component, type)
       eval(string_to_eval.gsub('action', action)) unless action.nil?
     end
