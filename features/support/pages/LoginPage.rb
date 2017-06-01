@@ -23,11 +23,15 @@ class LoginPage
   def log_in(user)
     email = $credentials[user]['email']
     password= $credentials[user]['password']
-    host = user.eql?('User A')?  USER_A_HOST : USER_B_HOST
-    transporter.go_to_url(host)
-    set_field('identifier', email)
-    click_btn('Next')
-    set_field('password', password)
-    click_btn('Next')
+    case user
+      when 'User A'
+        transporter.go_to_url(USER_A_HOST)
+        set_field('identifier', email)
+        click_btn('Next')
+        set_field('password', password)
+        click_btn('Next')
+      when 'User B'
+        transporter.go_to_url(USER_B_HOST)
+    end
   end
 end

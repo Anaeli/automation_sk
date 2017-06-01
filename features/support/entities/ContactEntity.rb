@@ -10,6 +10,7 @@ class ContactEntity
   # @param sreq_hash, hash with attributes values
   def initialize(sreq_hash)
     sreq_hash.each do |key, value|
+      next if key.eql?('Obj Reference')
       attribute = Utility.convert_to_underscore(key)
       string_to_evaluate = "@#{attribute} = '#{value}'"
       eval(string_to_evaluate)
@@ -21,6 +22,7 @@ class ContactEntity
   def create_object(sreq_hash)
     form = ContactInfoUI::FORM
     sreq_hash.each do |field_name, value|
+      next if field_name.eql?('Obj Reference')
       new_attr_name = Utility.convert_to_underscore(field_name)
       a = ContactInfoUI::NAME['Type']
       type = eval("ContactInfoUI::#{new_attr_name.upcase}['Type']")

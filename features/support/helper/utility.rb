@@ -6,4 +6,9 @@ module Utility
   def Utility.convert_to_underscore(string)
     return string.gsub(/::/, '/').gsub(/([A-Z]+)([A-Z][a-z])/, '\1_\2').gsub(/([a-z\d])([A-Z])/, '\1_\2').downcase
   end
+
+  # Method that capitalize an attribute and delete the @ character
+  def Utility.capitalize_attribute(attr_name)
+    return attr_name.to_s.delete('@').gsub(/[A-Za-z]+/, &:capitalize).gsub('_', '')
+  end
 end
