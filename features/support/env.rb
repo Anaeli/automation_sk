@@ -45,18 +45,12 @@ AfterConfiguration do
   # Environment configurations
   execution = $configuration['Execution']
   $browser = (ENV['browser'] || execution['browser']).to_sym
-  HOST = ENV['Host'] || execution['host']
+  USER_A_HOST = ENV['Host'] || execution['Host User A']
+  USER_B_HOST = ENV['Host'] || execution['Host User B']
   $wait_time = execution['max_wait_time']
   $min_wait_time = execution['min_wait_time']
 
-  # Get Credentials map
-  credentials = $configuration['credentials']
-  EMAIL_ADMIN = credentials['Administrator']['email']
-  PASSWORD_ADMIN = credentials['Administrator']['password']
-
-  EMAIL_CONTACT = credentials['Contact']['email']
-  PASSWORD_CONTACT = credentials['Contact']['password']
-
+  $credentials = $configuration['credentials']
 
   # Capybara Basic Configurations
   Capybara.configure do |config|

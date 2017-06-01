@@ -20,8 +20,11 @@ class LoginPage
   end
 
   # Method to log in into Google forms section
-  def log_in(email, password)
-    transporter.go_to_url(HOST)
+  def log_in(user)
+    email = $credentials[user]['email']
+    password= $credentials[user]['password']
+    host = user.eql?('User A')?  USER_A_HOST : USER_B_HOST
+    transporter.go_to_url(host)
     set_field('identifier', email)
     click_btn('Next')
     set_field('password', password)

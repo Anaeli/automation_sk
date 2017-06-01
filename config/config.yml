@@ -1,15 +1,16 @@
 # Credentials to interact with  contact form
 
 credentials:
-  Administrator:
+  User A:
     email: automation.sk2017@gmail.com
     password: test!23sk
-  Contact:
+  User B:
     email: automationsk007@gmail.com
     password: test!23sk
 
 Execution:
-  host: docs.google.com/forms/u/0/
+  Host User A: docs.google.com/forms/u/0/
+  Host User B: goo.gl/forms/4Hjs4N9fpki3UODZ2
   browser: chrome
   max_wait_time: 20
   min_wait_time: 3
