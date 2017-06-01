@@ -1,4 +1,4 @@
-# Module to manage Work Order box information
+# Module to manage Contact Information box information
 module ContactInformation
   extend Capybara::DSL
 

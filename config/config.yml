@@ -2,15 +2,15 @@
 
 credentials:
   User A:
-    email: automation.sk2017@gmail.com
+    email: automationsk007@gmail.com
     password: test!23sk
   User B:
-    email: automationsk007@gmail.com
+    email: automation.sk2017@gmail.com
     password: test!23sk
 
 Execution:
   Host User A: docs.google.com/forms/u/0/
-  Host User B: goo.gl/forms/4Hjs4N9fpki3UODZ2
+  Host User B: goo.gl/forms/OLUbVjwWtbIQXc1t1
   browser: chrome
   max_wait_time: 20
   min_wait_time: 3

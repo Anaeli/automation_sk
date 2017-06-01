@@ -1,15 +1,12 @@
 @contact
 Feature: Contact information form
 
-#  Scenario: Fill contact information form
-#    Given login
-
   Scenario: Fill contact information form
 
     Given I log in as "User B"
     When  I fill contact Information form with the following info
-      | Name      | email              | Address          |Obj Reference|
-      | Test User | mail.test@mail.com | Av. Siempre viva | @c_info            |
+      | Name      | email              | Address          | Obj Reference |
+      | Test User | mail.test@mail.com | Av. Siempre viva | @c_info       |
 
 
     Given I log in as "User A"
