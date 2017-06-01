@@ -9,6 +9,10 @@ When(/^I fill contact Information form with the following info$/) do |data_table
   end
 end
 
+Given(/^I fill contact Information form with the following info - previuos version$/) do |data_table|
+  ContactInfoForm.response_contact_info(data_table.hashes)
+end
+
 Then(/^I should see the following info in the response section for %\{(.*?)\}$/) do |response_info|
   expected_value = @hash_object[response_info]
   expected_value.instance_variables.each do |attribute|

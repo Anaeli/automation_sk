@@ -5,7 +5,7 @@ Feature: Contact information form
 
     Given I log in as "User B"
     When  I fill contact Information form with the following info
-      | Name      | email              | Address          | Obj Reference |
+      | Name      | Email              | Address          | Obj Reference |
       | Test User | mail.test@mail.com | Av. Siempre viva | @c_info       |
     Then I should see able to see confirm information
     """
