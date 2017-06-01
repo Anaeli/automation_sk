@@ -14,24 +14,26 @@ class LoginPage
     find(:xpath, "//input[@name='#{field}']").set(value)
   end
 
-  # This method is to do click in log in button
+  # This method is to do click in a button
+  # @param btn_name, button name
   def click_btn(btn_name)
     find(:xpath, "//span[text()='#{btn_name}']", match: :first).click
   end
 
   # Method to log in into Google forms section
+  # @param user, user to log in into Google
   def log_in(user)
     email = $credentials[user]['email']
-    password= $credentials[user]['password']
+    password = $credentials[user]['password']
     case user
-      when 'User A'
-        transporter.go_to_url(USER_A_HOST)
-        set_field('identifier', email)
-        click_btn('Next')
-        set_field('password', password)
-        click_btn('Next')
-      when 'User B'
-        transporter.go_to_url(USER_B_HOST)
+    when 'User A'
+      transporter.go_to_url(USER_A_HOST)
+      set_field('identifier', email)
+      click_btn('Next')
+      set_field('password', password)
+      click_btn('Next')
+    when 'User B'
+      transporter.go_to_url(USER_B_HOST)
     end
   end
 end

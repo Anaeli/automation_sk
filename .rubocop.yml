@@ -22,7 +22,8 @@ EndOfLine:
 
 # Built-in global variables are allowed by default.
 Style/GlobalVars:
-  AllowedVariables: [$org_prefix, $credentials, $configuration]
+  AllowedVariables: [ $org_prefix, $credentials, $configuration, $browser, $report_title, $config_path, $wait_time,
+                      $min_wait_time ]
 
 # Count the body method lines, except comment lines
 Metrics/MethodLength:

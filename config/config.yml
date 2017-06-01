@@ -14,3 +14,4 @@ Execution:
   browser: chrome
   max_wait_time: 20
   min_wait_time: 3
+  report_name: Google Form

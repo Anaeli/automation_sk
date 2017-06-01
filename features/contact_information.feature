@@ -7,7 +7,10 @@ Feature: Contact information form
     When  I fill contact Information form with the following info
       | Name      | email              | Address          | Obj Reference |
       | Test User | mail.test@mail.com | Av. Siempre viva | @c_info       |
-
+    Then I should see able to see confirm information
+    """
+    Thanks for submitting your contact info!
+    """
 
     Given I log in as "User A"
     When I select form to click "Responses" tab

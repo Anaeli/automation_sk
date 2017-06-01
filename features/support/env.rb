@@ -51,6 +51,7 @@ AfterConfiguration do
   $min_wait_time = execution['min_wait_time']
 
   $credentials = $configuration['credentials']
+  $report_title = execution['report_name']
 
   # Capybara Basic Configurations
   Capybara.configure do |config|
@@ -72,7 +73,7 @@ at_exit do
       config.report_title = ENV['report_title'] || $report_title
       config.compress_images = false
       config.additional_info = { browser: $browser,
-                                 environment: $org_name,
+                                 environment: 'Google',
                                  date: Time.now.strftime('%Y-%m-%d-%H:%M') }
     end
     ReportBuilder.build_report
@@ -81,12 +82,10 @@ end
 
 After do |scenario|
   name = scenario.name[0..200]
-  if scenario.failed?
-    datetime = Time.now.strftime('%Y-%m-%d-%H-%M-')
-    browser = "#{$browser}-"
-    scenario_path = 'screenshots/FAILED-' + datetime + browser + name + '.png'
-    page.driver.browser.save_screenshot(scenario_path)
-    embed(File.expand_path(scenario_path), 'image/png', 'Scenario_Failed_Screenshot')
-  else
-  end
+  next unless scenario.failed?
+  datetime = Time.now.strftime('%Y-%m-%d-%H-%M-')
+  browser = "#{$browser}-"
+  scenario_path = 'screenshots/FAILED-' + datetime + browser + name + '.png'
+  page.driver.browser.save_screenshot(scenario_path)
+  embed(File.expand_path(scenario_path), 'image/png', 'Scenario_Failed_Screenshot')
 end
